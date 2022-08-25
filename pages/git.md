@@ -1,4 +1,82 @@
-## Общие команды
+## Git
+
+### Установка Git
+https://gitforwindows.org/ <br>
+https://git-scm.com/book/ru/v2/Введение-Установка-Git
+
+`git --version`
+
+### Генерация ключа MSysGit для GitHub
+`ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`<br>
+`eval "$(ssh-agent -s)"`<br>
+`ssh-add ~/.ssh/id_rsa`<br>
+`clip < ~/.ssh/id_rsa.pub`<br>
+`ssh -T git@github.com`
+
+### Подгрузка репозитория GitHub в IDEA
+`git init`<br>
+`git remote add origin SSH_GIT_PROJECT`<br>
+`git remote -v`<br>
+`git checkout -b master`<br>
+`git fetch`
+
+### Настройки Git в IDEA
+Файл **.gitignore**<br>
+`*.class`<br>
+`target/`<br>
+`*.iml`<br>
+`.idea/`
+
+### Локальный конфиг
+`C:\Users\Admin\IdeaProjects\education\.git\config`
+
+###Глобальный конфиг
+`C:\Program Files\Git\etc\gitconfig`
+
+### Настройка Alias консоль
+`git config --global alias.co checkout`<br>
+`git config --global alias.br branch`<br>
+`git config --global alias.ci commit`<br>
+`git config --global alias.st status`<br>
+`git config --global alias.ls "log --oneline --graph --decorate --all"`<br>
+`git config --global alias.lsf "log --oneline --graph --decorate --all --pretty=format:'%C(auto)%h%d %C(reset)%s %C(green)(%cD)%C(reset) %C(blue)<%an>'"`<br>
+`git config --global alias.rf reflog --date=iso`<br>
+`git config --global alias.cim commit -m`
+
+### Настройка Alias файл
+`C:\Users\Admin\.gitconfig`
+
+`co = checkout`<br>
+`br = branch`<br>
+`ci = commit`<br>
+`st = status`<br>
+`ls = log --oneline --graph --decorate --all`<br>
+`lsf = log --oneline --graph --decorate --all --pretty=format:'%C(auto)%h%d %C(reset)%s %C(green)(%cD)%C(reset) %C(blue)<%an>'`<br>
+`rf = reflog --date=iso`<br>
+`cim = commit -m`
+
+### Конфигурационные команды
+`git config --global user.name "name"` // установить имя, которое будет прикрепляться к коммиту.<br>
+`git config --global user.email "email address"` // установить email, который будет прикрепляться к коммиту.<br>
+`git config --global color.ui auto` // включить полезную подсветку командной строки.<br>
+`git config --global push.default current` // обновлять удаленную ветку с таким же именем, что и локальная, при пуше изменений (если не указано иного).<br>
+`git config --global core.editor <editor>` // установить редактор для редактирования сообщений коммита.<br>
+`git config --global diff.tool <tool>` // установить программу для разрешения конфликтов при слиянии.
+
+### Нотации (~ и ^)
+
+![notations](/img/notations.png)
+
+HEAD~ — это сокращенная запись HEAD~1 и означает первого родителя коммита. HEAD~2 означает первого родителя у первого родителя коммита. HEAD~n можно понимать как «n коммитов перед HEAD» или «n-ый предок HEAD».
+
+HEAD^ (или HEAD^1) тоже означает первого родителя коммита. Но вот HEAD^2 означает второго родителя коммита. Помните, коммит, представляющий собой нормальное слияние (merge), имеет двух родителей: первый родитель — это коммит, в который осуществляется слияние, а второй родитель — коммит, который был слит. Вообще говоря, слияния могут иметь произвольно много родителей (octopus merges).
+
+Операторы ^ и ~ могут выстраиваться в линию, например, HEAD~3^2 будет означать второго родителя предка HEAD третьего уровня; HEAD^^2 — второго родителя первого родителя HEAD; HEAD^^^ — это просто эквивалент HEAD~3.
+
+
+
+
+### Общие команды
 
 `git init <project-name>` // создать новый локальный репозиторий с заданным именем.<br>
 `git clone <url>` // загрузить проект и его полную историю изменений.<br>
