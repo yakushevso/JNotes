@@ -1,13 +1,13 @@
 # JNotes
 
-### Оглавление:
+## Оглавление:
 
-[Java](pages/java.md)
+### [Java](pages/java.md)
 
-[Git](pages/git.md)
+### [Git](pages/git.md)
 
-[Таблица ASCII](pages/ascii.md)
+### [Таблица ASCII](pages/ascii.md)
 
-[IntelliJ IDEA](pages/intellij_idea.md)
+### [IntelliJ IDEA](pages/intellij_idea.md)
 
-[Полезные ссылки](pages/useful.md)
+### [Полезные ссылки](pages/useful.md)
