@@ -1,4 +1,4 @@
-## IntelliJ IDEA
+## [../](/README.md) IntelliJ IDEA
 
 ### Горячие клавиши
 [Windows & Linux keymap - JetBrains](https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf)

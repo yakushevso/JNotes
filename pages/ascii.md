@@ -1,4 +1,4 @@
-## Таблица ASCII
+## [../](/README.md) Таблица ASCII
 
 ![ascii](/img/ascii.png)
 
