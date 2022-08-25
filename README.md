@@ -1,7 +1,5 @@
 # JNotes
 
-## Оглавление:
-
 ### [Java](pages/java.md)
 
 ### [Git](pages/git.md)
