@@ -1,4 +1,6 @@
-## [../](/README.md) Полезные ссылки
+[<-- back to README](/README.md)
+
+## Полезные ссылки
 
 #### Java frameworks, libraries and software
 https://github.com/akullpp/awesome-java

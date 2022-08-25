@@ -1,4 +1,6 @@
-## [../](/README.md) Таблица ASCII
+[<-- back to README](/README.md)
+
+## Таблица ASCII
 
 ![ascii](/img/ascii.png)
 

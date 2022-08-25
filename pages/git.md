@@ -1,4 +1,6 @@
-## [../](/README.md) Git
+[<-- back to README](/README.md)
+
+## Git
 
 ### Установка Git
 https://gitforwindows.org/   
