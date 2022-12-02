@@ -117,11 +117,70 @@ boolean	| Булевы выражения | 8 (в массивах) / 32 (не �
 
 #### String
 
-Класс реализует интерфейсы Serializable и CharSequence. Поскольку он входит в пакет java.lang, его не нужно импортировать.
-Класс String в Java — это final класс, который не может иметь потомков.
-Класс String — immutable класс, то есть его объекты не могут быть изменены после создания. Любые операции над объектом String, результатом которых должен быть объект класса String, приведут к созданию нового объекта.
-Благодаря своей неизменности, объекты класса String являются потокобезопасными и могут быть использованы в многопоточной среде.
-Каждый объект в Java может быть преобразован в строку через метод toString, унаследованный всеми Java-классами от класса Object.
+java.lang.String
+
+* Класс реализует интерфейсы Serializable и CharSequence. Поскольку он входит в пакет java.lang, его не нужно импортировать.
+* Класс String в Java — это final класс, который не может иметь потомков.
+* Класс String — immutable класс, то есть его объекты не могут быть изменены после создания. Любые операции над объектом String, результатом которых должен быть объект класса String, приведут к созданию нового объекта.
+* Благодаря своей неизменности, объекты класса String являются потокобезопасными и могут быть использованы в многопоточной среде.
+* Каждый объект в Java может быть преобразован в строку через метод toString, унаследованный всеми Java-классами от класса Object.
+* Строка — это не char[], хотя есть способы конвертации.
+* Никаких нулевых символов в конце, длина хранится отдельно.
+
+Строковые литералы:
+
+```java
+String zeros = "\u0000 \u0000";
+String hello = "Hello";
+String specialChars = "\r \n \t \" \\";
+String unicodeEscapes = "\u0101 \u2134 \u03ff";
+```
+
+Создание из массива символов с помощью конструктора:
+
+```java
+char[] charArray = {’a’, ’b’, ’c’, ’d’};
+String string = new String (charArray); // abcd
+String string = new String (charArray, 0, 2); // ab
+```
+
+Доступ к содержимому строки:
+
+```java
+int length()
+char charAt(int index)
+char[] toCharArray()
+String substring(int beginIndex)
+String substring(int beginIndex, int endIndex)
+```
+
+Конкатенация строк:
+
+```java
+String helloWorld = "Hello " + "World !"; // Hello World!
+```
+
+StringBuilder:
+
+java.lang.StringBuilder
+
+```java
+StringBuilder buf = new StringBuilder();
+buf.append ("Hello ");
+buf.append ("World!");
+String result = buf.toString(); // Hello World!
+```
+
+Сравнение строк:
+
+* Оператор == сравнивает ссылки, а не содержимое строки
+
+```java
+boolean equals(Object anObject)
+boolean equalsIgnoreCase(String anotherString)
+int compareTo(String anotherString)
+int compareToIgnoreCase(String anotherString)
+```
 
 #### Arrays
 
@@ -182,11 +241,11 @@ int[] row = matrix2[0]
 
 ```java
 int[][] triangle = {
-{1, 2, 3, 4, 5},
-{6, 7, 8, 9},
-{10, 11, 12},
-{13, 14},
-{15}};
+        {1, 2, 3, 4, 5},
+        {6, 7, 8, 9},
+        {10, 11, 12},
+        {13, 14},
+        {15}};
 // triangle.length -> 5
 // triangle[0].length -> 5
 // triangle[4].length -> 1
@@ -382,4 +441,139 @@ long nTime = System.nanoTime(); // Start
 System.out.printf("Time -> %,1.3f ms\n", (System.nanoTime() - nTime)/1_000_000.0); // Stop
 
 // System.out.println("Fast version: " + (double) fastVersion / 1000000000 + " s");
+```
+### Примеры
+
+Fibonacci
+
+```java
+public class Fibonacci {
+  public static long getFibonacciNumber(int n) {
+    if (n <= 0) {
+      return 0;
+    }
+    long prev = 0;
+    long curr = 1;
+    for (int i = 1; i < n; ++i) {
+      long next = prev + curr;
+      prev = curr;
+      curr = next;
+    }
+    return curr;
+  }
+
+  public static void main(String[] args) {
+    for (int i = 0; i <= Integer.parseInt(args[0]); ++i) {
+      System.out.printf("fib (%d) = %d\n", i, getFibonacciNumber(i));
+    }
+  }
+}
+```
+
+FibonacciBigInteger
+
+```java
+import java.math.BigInteger;
+
+public class FibonacciBigInteger {
+  public static BigInteger getFibonacciNumber(int n) {
+    if (n <= 0) {
+      return BigInteger.ZERO;
+    }
+    BigInteger prev = BigInteger.ZERO;
+    BigInteger curr = BigInteger.ONE;
+    for (int i = 1; i < n; ++i) {
+      BigInteger next = prev.add(curr);
+      prev = curr;
+      curr = next;
+    }
+    return curr;
+  }
+
+  public static void main(String[] args) {
+    for (int i = 0; i <= Integer.parseInt(args[0]); ++i) {
+      System.out.printf("fib (%d) = %d\n",
+              i, getFibonacciNumber(i));
+    }
+  }
+}
+```
+
+Anagrams
+
+```java
+import java.util.Arrays;
+
+public class Anagrams {
+  public static boolean areAnagrams(String a, String b) {
+    char[] charsFromA = getSortedChars(a);
+    char[] charsFromB = getSortedChars(b);
+    return Arrays.equals(charsFromA, charsFromB);
+  }
+
+  private static char[] getSortedChars(String s) {
+    char[] chars = s.toCharArray();
+    Arrays.sort(chars);
+    return chars;
+  }
+
+  public static void main(String[] args) {
+    System.out.println(areAnagrams(" silent ", " listen ")
+            ? " anagrams "
+            : "not anagrams ");
+  }
+}
+```
+
+Palindromes
+
+```java
+public class Palindromes {
+  public static boolean isPalindrome(String s) {
+    String normalizedText = normalize(s);
+    return normalizedText.equals(reverse(normalizedText));
+  }
+
+  private static String normalize(String s) {
+    return s.toLowerCase().replaceAll("\\W+", "");
+  }
+
+  private static String reverse(String s) {
+    return new StringBuilder(s).reverse().toString();
+  }
+
+  public static void main(String[] args) {
+    System.out.println(isPalindrome("Madam , I’m Adam ")
+            ? " palindrome " : "not palindrome ");
+  }
+}
+```
+
+Polygons
+
+```java
+public class Polygons {
+  public static double getArea(double[][] polygon) {
+    int size = polygon.length;
+    double sum = 0;
+    for (int i = 0; i < size; ++i) {
+      int j = (i + 1) % size;
+      sum += det(polygon[i][0], polygon[i][1],
+              polygon[j][0], polygon[j][1]);
+    }
+    return Math.abs(sum / 2);
+  }
+
+  private static double det(double x1, double y1,
+                            double x2, double y2) {
+    return x1 * y2 - x2 * y1;
+  }
+
+  public static void main(String[] args) {
+    double[][] polygon = new double[][]{
+            {1, 1}, {1, 2}, {2, 2}, {2, 1}};
+    System.out.printf(
+            " Polygon area = %1.3 f\n", getArea(polygon));
+  }
+}
 ```
