@@ -2,6 +2,69 @@
 
 ## Java
 
+### Общее
+
+#### JDK, JRE и JVM
+
+![jdk-jre-jvm](../img/jdk-jre-jvm.png)
+
+* JDK (Java Development Kit) - набор программ для разработки. Включает в себя JRE, загрузчик кода java, компилятор javac, архиватор jar, генератор документации javadoc и другие утилиты
+* JRE (Java Runtime Environment) - окружение, необходимое для запуска Java-программ. Включает в себя JVM, стандартную библиотеку (пакеты lang, util, пакеты для работы с различными форматами, базами данных, пользовательским интерфейсом и другие пакеты)
+* JVM (Java Virtual Machine) - виртуальная машина отвечает за выполнение байт-кода Java (.class)
+
+#### Сборка, исполнение и архивация
+
+
+Компиляция кода, получаем файл HelloWorld.class:
+
+`javac HelloWorld.java`
+
+Запуск HelloWorld.class:
+
+`java -cp . HelloWorld`  
+ * Ключ `-cp` сокращение от `-classpath` указывает компилятору, где искать исходные файлы  
+
+Компиляция кода с созданием каталогов:
+
+`javac -d bin src/HelloWorld.java`  
+
+На выходе получаем каталоги:  
+* Исходный файл - `src/HelloWorld.java`  
+* Скомпилированный файл - `bin/HelloWorld.class`
+
+Запуск bin/HelloWorld.class из каталога:
+
+`java -cp ./bin HelloWorld`
+
+JAR (Java Archive):
+
+`jar -cf jar-файл входной-файл(ы)`  
+* Ключ `c` показывает, что необходимо создать (create) JAR-файл
+* Ключ `f` показывает, что необходимо направить вывод в файл, а не в стандартный поток вывода
+* `jar-файл` - название выходного JAR-файла с расширением `.jar`
+* `входной-файл(ы)` - список файлов через пробел, которые необходимо поместить в JAR-файл
+* Команда `jar` автоматически создает файл `MANIFEST.MF` и помещает в каталог `META-INF`
+
+Кроме JAR, также существуют другие архивы, связанные с Java:
+
+* WAR (**W**eb **A**pplication A**r**chive) - содержит в себе приложение для веба
+* EAR (**E**nterprise **A**pplication A**r**chive) - содержит в себе энтерпрайз приложение (обычно из нескольких модулей)
+* APK (**A**ndroid A**p**plication Pac**k**age) - содержит в себе приложение для Android
+
+#### Ключевые слова Java
+
+Список ключевых слов:
+
+* Примитивные типы: `byte`,`short`,`int`,`long`,`float`,`double`,`char`,`boolean`
+* Управление потоком: `if`,`else`,`for`,`do`,`while`,`switch`,`case`,`default`,`break`,`continue`,`return`
+* Обработка исключений: `try`,`catch`,`finally`,`throw`,`throws`,`assert`
+* Модификаторы: `public`,`private`,`protected`,`final`,`static`,`native`,`abstract`,`synchronized`,`transient`,`volatile`,`strictfp`
+* Связанные с классом: `class`,`interface`,`package`,`extends`,`implements`,`import`
+* Связанный с объектом: `new`,`instanceof`,`super`,`this`
+* Литералы: `true`,`false`,`null`
+* Другие: `void`,`enum`
+* Не используется: `goto`,`const`
+
 ### [Типы данных](https://ru.wikibooks.org/wiki/Java/Типы_данных)
 
 #### Целочисленные типы
@@ -306,6 +369,23 @@ boolean | Boolean | java.lang.Boolean
 
 ![cast](/img/cast.png)
 
+Автоматические преобразования (с потерей точности):  
+int -> float, long -> float и long -> double
+
+```java
+int a = 2147483647;
+float b = a;           // от типа int к типу float
+System.out.println(b); // 2.14748365E9
+```
+
+Явные преобразования (с потерей точности):
+
+```java
+int a = 258;
+byte b = (byte) a;
+System.out.println(b); // 2
+```
+
 ### Арифметические операции
 Оператор|Описание
 :---:|---
@@ -392,7 +472,21 @@ A | B | A &#124; B | A & B | A ^ B | ~A
 \" | Символ двойной кавычки.
 \\ | Символ обратной косой черты (\\).
 
-### Модификаторы доступа
+### Условный / тернарный оператор
+
+`<логическое выражение> ? <выражение1> : <выражение2>`
+
+```java
+int a = 0;
+System.out.println(a == 1 ? "One" : "Not one"); // Not one
+```
+
+### Объектно-ориентированное программирование
+
+* Объектно-ориентированное программирование — парадигма программирования, в которой программа строится из взаимодействующих объектов
+
+
+#### Модификаторы доступа
 
 `public`
 
