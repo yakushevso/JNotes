@@ -352,7 +352,7 @@ java.util.Arrays:
 * binarySearch
 * java.lang.System.arraycopy
 
-#### Обертки
+#### Классы-оболочки
 
 Тип|Класс-обертка|Путь
 :---:|:---:|:---:
@@ -364,6 +364,35 @@ char | Character | java.lang.Integer
 float | Float | java.lang.Float
 double | Double | java.lang.Double
 boolean | Boolean | java.lang.Boolean
+
+Служебные методы:
+
+valueOf()
+
+* Метод valueOf() – возвращает соответствующий числовой объект, содержащий значение переданного аргумента
+
+```java
+Integer a = Integer.valueOf(9); // 9
+Double b = Double.valueOf(5); // 5.0
+Float c = Float.valueOf("80"); // 80.0
+Integer d = Integer.valueOf("444",16); // 1092
+```
+
+xxxValue()
+
+* Метод xxxValue() -
+
+parseXxx()
+
+* Метод parseXxx() - 
+
+toString()
+
+* Метод toString() -
+
+toXxxxString()
+
+* Метод toXxxxString() -
 
 ### Приведение типов
 
@@ -404,6 +433,30 @@ System.out.println(b); // 2
 
 * Деление на ноль — выбрасывается исключение `ArithmeticException`
 * Переполнение не является исключением, лишние старшие биты выкидываются
+
+#### Оператор инкремент / декремент
+
+* Оператор предварительного приращения возвращает значение после приращения. Оператор постинкремента возвращает значение до инкремента
+
+```java
+int i = 25;
+int j = ++i; // i увеличивается до 26, присваивается j
+System.out.println(i + " " + j); //26 26
+        
+i = 25;
+j = i++; // i значение (25) присваивается j, затем увеличивается до 26
+System.out.println(i + " " + j); // 26 25
+```
+
+```java
+i = 25;
+j = --i; // i уменьшается до 24, присваивается j
+System.out.println(i + " " + j);//24 24
+
+i = 25;
+j = i--; // i значение (25) присваивается j, затем уменьшается до 24
+System.out.println(i + " " + j); // 24 25
+```
 
 ### Math
 
