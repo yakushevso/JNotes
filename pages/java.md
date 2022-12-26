@@ -111,7 +111,7 @@ long | Длинные дробные числа | 64 бит | от -922337203685
 \\ddd | Восьмеричный символ (ddd)
 \\uxxxx | Шестнадцатеричный символ UNICODE (xxxx)
 
-##### Методы реализующие класс Character:
+##### Методы реализующие класс Character
 
 `toLowerCase()` - 
 
@@ -252,7 +252,7 @@ sBuffer.append(" StringBuffer");
 System.out.println(sBuffer); // Тест StringBuffer
 ```
 
-##### Методы реализующие классы StringBuffer и StringBuilder:
+##### Методы реализующие классы StringBuffer и StringBuilder
 
 `public StringBuffer append(String s)` - Обновляет значение объекта, который вызывает метод (принимает boolean, char, int, long, Strings и т.д.)
 
@@ -298,7 +298,7 @@ new String("Текст") == "Текст" // false
 new String("Текст") == new String("Текст") // false
 ```
 
-##### Методы реализующие класс String:
+##### Методы реализующие класс String
 
 `char charAt(int index)` - Возвращает символ по указанному индексу.
 
@@ -484,7 +484,7 @@ int[][] b = new int[1000][10];
 * Выводит содержимое: `System.out.println(Arrays.toString(a))`
 * Выводит содержимое многомерных массивов: `System.out.println(Arrays.deepToString(a))`
 
-##### Методы реализующие класс Arrays:
+##### Методы реализующие класс Arrays
 
 `static int binarySearch(int[] a, int key)` - Ищет в указанном массиве целых чисел указанное значение, используя алгоритм двоичного поиска..
 
@@ -582,7 +582,7 @@ boolean | Boolean | java.lang.Boolean
 * Эквивалентно значению, возвращаемому `Double.longBitsToDouble(0x7ff8000000000000L)`
 * Эквивалентно значению, возвращаемому `Float.intBitsToFloat(0x7fc00000)`
 
-##### Методы реализующие подклассы класса Number:
+##### Методы реализующие подклассы класса Number
 
 `static int bitCount(int i)` - Возвращает количество одиночных битов в двоичном представлении дополнения до двух указанного значения int.
 
