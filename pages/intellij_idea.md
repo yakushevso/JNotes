@@ -5,6 +5,9 @@
 ### Горячие клавиши
 [Windows & Linux keymap - JetBrains](https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf)
 
+
+![intellij_idea](/img/intellij_idea.png)
+
 1. Редактирование
 
 |||
