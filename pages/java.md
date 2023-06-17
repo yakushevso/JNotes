@@ -1310,15 +1310,16 @@ public class Test {
 public class Program {
     public static void main(String[] args) {
         Person bob = new Person(); // вызов первого конструктора без параметров
-        bob.displayInfo();
+        bob.displayInfo(); // Name: Undefined - Age: 18
 
         Person tom = new Person("Tom"); // вызов второго конструктора с одним параметром
-        tom.displayInfo();
+        tom.displayInfo(); // Name: Tom - Age: 19
 
         Person sam = new Person("Sam", 25); // вызов третьего конструктора с двумя параметрами
-        sam.displayInfo();
+        sam.displayInfo(); // Name: Sam - Age: 25
     }
 }
+
 class Person {
     String name;
     int age;
@@ -1330,7 +1331,7 @@ class Person {
     
     Person(String n) {
         name = n;
-        age = 18;
+        age = 19;
     }
     
     Person(String n, int a) {
@@ -1339,13 +1340,9 @@ class Person {
     }
     
     void displayInfo() {
-        System.out.printf("Name: %s \tAge: %d\n", name, age);
+        System.out.printf("Name: %s - Age: %d\n", name, age);
     }
 }
-
-// Name: Undefined		Age: 18
-// Name: Tom			Age: 18
-// Name: Sam			Age: 25
 ```
 
 #### Пакеты
@@ -1408,6 +1405,9 @@ protected | + | + | + | -
 default | + | + | - | -
 private | + | - | - | -
 
+* В исходном файле может быть только один публичный класс (public class).
+* Исходный файл может иметь несколько "непубличных" классов.
+
 Правила контроля доступа и наследования:
 
 * Методы объявленные как public в суперклассе, также должны быть public во всех подклассах.
@@ -1419,7 +1419,7 @@ private | + | - | - | -
 * Модификатор `static` применяется для создания методов и переменных класса.
 * Модификатор `final` используется для завершения реализации классов, методов и переменных.
 * Модификатор `abstract` необходим для создания абстрактных классов и методов.
-* Модификаторы `synchronized` и `volatile` используются в Java для потоков.
+* Модификаторы `synchronized` и `volatile` используются для потоков.
 
 ### Исключения
 
@@ -1440,147 +1440,4 @@ long nTime = System.nanoTime(); // Start
 // Код
 System.out.printf("Time -> %,1.3f ms\n", (System.nanoTime() - nTime)/1_000_000.0); // Stop
 // System.out.println("Fast version: " + (double) fastVersion / 1000000000 + " s");
-```
-### Примеры
-
-Fibonacci
-
-```java
-public class Fibonacci {
-  public static long getFibonacciNumber(int n) {
-    if (n <= 0) {
-      return 0;
-    }
-    long prev = 0;
-    long curr = 1;
-    for (int i = 1; i < n; ++i) {
-      long next = prev + curr;
-      prev = curr;
-      curr = next;
-    }
-    return curr;
-  }
-
-  public static void printFibonacci(int max) {
-    for (int i = 0; i <= max; ++i) {
-      System.out.printf("fib (%d) = %d\n", i, getFibonacciNumber(i));
-    }
-  }
-
-  public static void main(String[] args) {
-    printFibonacci(15);
-  }
-}
-```
-
-FibonacciBigInteger
-
-```java
-import java.math.BigInteger;
-
-public class FibonacciBigInteger {
-  public static BigInteger getFibonacciNumber(int n) {
-    if (n <= 0) {
-      return BigInteger.ZERO;
-    }
-    BigInteger prev = BigInteger.ZERO;
-    BigInteger curr = BigInteger.ONE;
-    for (int i = 1; i < n; ++i) {
-      BigInteger next = prev.add(curr);
-      prev = curr;
-      curr = next;
-    }
-    return curr;
-  }
-
-  public static void printFibonacciBigInteger(int max) {
-    for (int i = 0; i <= max; ++i) {
-      System.out.printf("fib (%d) = %d\n", i, getFibonacciNumber(i));
-    }
-  }
-
-  public static void main(String[] args) {
-    printFibonacciBigInteger(15);
-  }
-}
-```
-
-Anagrams
-
-```java
-import java.util.Arrays;
-
-public class Anagrams {
-  public static boolean areAnagrams(String a, String b) {
-    char[] charsFromA = getSortedChars(a);
-    char[] charsFromB = getSortedChars(b);
-    return Arrays.equals(charsFromA, charsFromB);
-  }
-
-  private static char[] getSortedChars(String s) {
-    char[] chars = s.toCharArray();
-    Arrays.sort(chars);
-    return chars;
-  }
-
-  public static void printAnagrams(String a, String b) {
-    System.out.println(areAnagrams(a, b) ? "anagrams" : "not anagrams");
-  }
-
-  public static void main(String[] args) {
-    printAnagrams("silent", "listen");
-  }
-}
-```
-
-Palindromes
-
-```java
-public class Palindromes {
-  public static boolean isPalindrome(String s) {
-    String normalizedText = normalize(s);
-    return normalizedText.equals(reverse(normalizedText));
-  }
-
-  private static String normalize(String s) {
-    return s.toLowerCase().replaceAll("\\W+", "");
-  }
-
-  private static String reverse(String s) {
-    return new StringBuilder(s).reverse().toString();
-  }
-
-  public static void printPalindromes(String s) {
-    System.out.println(isPalindrome(s) ? "palindrome" : "not palindrome");
-  }
-
-  public static void main(String[] args) {
-    printPalindromes("Madam, I’m Adam");
-  }
-}
-```
-
-Polygons
-
-```java
-public class Polygons {
-  public static double getArea(double[][] polygon) {
-    int size = polygon.length;
-    double sum = 0;
-    for (int i = 0; i < size; ++i) {
-      int j = (i + 1) % size;
-      sum += det(polygon[i][0], polygon[i][1], polygon[j][0], polygon[j][1]);
-    }
-    return Math.abs(sum / 2);
-  }
-
-  private static double det(double x1, double y1, double x2, double y2) {
-    return x1 * y2 - x2 * y1;
-  }
-
-  public static void main(String[] args) {
-    double[][] polygon = new double[][]{{1, 1}, {1, 2}, {2, 2}, {2, 1}};
-    System.out.printf("Polygon area = %1.3f\n", getArea(polygon));
-  }
-}
 ```
