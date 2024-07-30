@@ -1,9 +1,10 @@
 # JNotes
 
-### [Java](pages/java.md)
+Персональная база знаний с конспектами и заметками по ключевым технологиям разработки.
 
-### [Git](pages/git.md)
+## Содержание  
 
-### [IntelliJ IDEA](pages/intellij_idea.md)
-
-### [Полезные ссылки](pages/useful.md)
+- **[Java](pages/java/java.md)**  
+- **[SQL](pages/sql/sql.md)**  
+- **[Git](pages/git/git.md)**  
+- **[IntelliJ IDEA](pages/idea/intellij_idea.md)**
