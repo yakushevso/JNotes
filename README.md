@@ -1,9 +1,9 @@
 # JNotes
 
-### [Java](pages/java.md)
+### [Java](pages/java/java.md)
 
-### [Git](pages/git.md)
+### [SQL](pages/sql/sql.md)
 
-### [IntelliJ IDEA](pages/intellij_idea.md)
+### [Git](pages/git/git.md)
 
-### [Полезные ссылки](pages/useful.md)
+### [IntelliJ IDEA](pages/idea/intellij_idea.md)
