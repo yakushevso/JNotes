@@ -6,7 +6,7 @@
 1. [История](introduction/history.md)
 2. [Особенности](introduction/features.md)
 3. [Применение](introduction/usage.md)
-4. [Виды Java](introduction/types_java.md)
+4. [Платформы](introduction/platforms.md)
 6. [Основы JVM](introduction/jvm/jvm_basics.md)
 	1. [Основные термины: JDK, JRE и JVM](introduction/jvm/jdk_jre_jvm.md)
 	2. [Компоненты JVM](introduction/jvm/jvm_components.md)
