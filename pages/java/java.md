@@ -1,12 +1,20 @@
-##### [<-- back to README](/README.md)
+##### [readme](/README.md)
 
 ## Java
 
 ### Введение
-1. [История](introduction/history.md)
-2. [JDK, JRE и JVM](introduction/jdk_jre_jvm.md)
-3. [Установка и настройка (Windows)](introduction/install.md)
-4. [Сборка, исполнение и архивация](introduction/launch.md)
+1. [История](pages/java/introduction/history.md)
+2. [Особенности](pages/java/introduction/features.md)
+3. [Применение](pages/java/introduction/usage.md)
+4. [Виды Java](pages/java/introduction/types_java.md)
+6. [Основы JVM](pages/java/introduction/jvm/jvm_basics.md)
+	1. [Основные термины: JDK, JRE и JVM](pages/java/introduction/jvm/jdk_jre_jvm.md)
+	2. [Компоненты JVM](pages/java/introduction/jvm/jvm_components.md)
+	3. [Параметры JVM](pages/java/introduction/jvm/jvm_options)
+	4. [Сборка, исполнение и архивация](pages/java/introduction/jvm/launch.md)
+7. [Установка и настройка](pages/java/introduction/install/install)
+	1. [Windows](pages/java/introduction/install/install_win.md)
+	2. [Linux](pages/java/introduction/install/install_linux)
 
 ### Основы
 1. [Основы синтаксиса](base/syntax.md)
