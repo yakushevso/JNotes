@@ -1,4 +1,4 @@
-##### [readme](/README.md) → [java](pages/java/java.md) → [jvm_basics](pages/java/introduction/jvm/jvm_basics)
+##### [readme](/README.md) → [java](../../java.md) → [jvm_basics](jvm_basics.md)
 
 ## Java Virtual Machine
 

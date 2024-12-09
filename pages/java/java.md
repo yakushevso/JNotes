@@ -3,18 +3,18 @@
 ## Java
 
 ### Введение
-1. [История](pages/java/introduction/history.md)
-2. [Особенности](pages/java/introduction/features.md)
-3. [Применение](pages/java/introduction/usage.md)
-4. [Виды Java](pages/java/introduction/types_java.md)
-6. [Основы JVM](pages/java/introduction/jvm/jvm_basics.md)
-	1. [Основные термины: JDK, JRE и JVM](pages/java/introduction/jvm/jdk_jre_jvm.md)
-	2. [Компоненты JVM](pages/java/introduction/jvm/jvm_components.md)
-	3. [Параметры JVM](pages/java/introduction/jvm/jvm_options)
-	4. [Сборка, исполнение и архивация](pages/java/introduction/jvm/launch.md)
-7. [Установка и настройка](pages/java/introduction/install/install)
-	1. [Windows](pages/java/introduction/install/install_win.md)
-	2. [Linux](pages/java/introduction/install/install_linux)
+1. [История](introduction/history.md)
+2. [Особенности](introduction/features.md)
+3. [Применение](introduction/usage.md)
+4. [Виды Java](introduction/types_java.md)
+6. [Основы JVM](introduction/jvm/jvm_basics.md)
+	1. [Основные термины: JDK, JRE и JVM](introduction/jvm/jdk_jre_jvm.md)
+	2. [Компоненты JVM](introduction/jvm/jvm_components.md)
+	3. [Параметры JVM](introduction/jvm/jvm_options.md)
+	4. [Сборка, исполнение и архивация](introduction/jvm/launch.md)
+7. [Установка и настройка](introduction/install/install.md)
+	1. [Windows](introduction/install/install_win.md)
+	2. [Linux](introduction/install/install_linux.md)
 
 ### Основы
 1. [Основы синтаксиса](base/syntax.md)

@@ -1,4 +1,4 @@
-##### [readme](/README.md) → [java](pages/java/java.md)
+##### [readme](/README.md) → [java](../java.md)
 
 ## История
 

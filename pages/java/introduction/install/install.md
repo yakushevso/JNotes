@@ -1,6 +1,6 @@
-##### [readme](/README.md) → [java](pages/java/java.md) 
+##### [readme](/README.md) → [java](../../java.md) 
 
 ## Установка и настройка
 
-1. [Windows](pages/java/introduction/install/install_win.md)
-2. [Linux](pages/java/introduction/install/install_linux)
+1. [Windows](install_win.md)
+2. [Linux](install_linux.md)
