@@ -52,4 +52,4 @@
 2. [Коллекции](advanced/collections.md)
 
 ### Полезное
-1. [Полезное](useful/useful.md)
+1. [Рецепты](useful/recipes.md)
